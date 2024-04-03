@@ -22,7 +22,7 @@ RUN go build -mod=vendor -o build/_output/fabric-sim ./cmd/fabric-sim && \
 FROM alpine:3.13
 RUN apk add libc6-compat
 
-USER nobody
+USER root
 
 COPY --from=build /build/build/_output/fabric-sim /usr/local/bin/fabric-sim
 COPY --from=build /build/build/_output/fabric-sim-topo /usr/local/bin/fabric-sim-topo
