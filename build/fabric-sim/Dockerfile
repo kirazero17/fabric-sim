@@ -9,6 +9,7 @@ WORKDIR /build
 
 # copy only the files that are needed for the build, exclude everything else to make better use of the docker cache
 COPY ./cmd /build/cmd
+COPY ./topologies /build/topologies
 COPY ./pkg /build/pkg
 COPY ./vendor /build/vendor
 COPY ./go.mod /build
